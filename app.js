@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
+const cors = require('cors')
 const port = 3000;
 require('dotenv/config');
 
@@ -8,6 +9,7 @@ require('dotenv/config');
 const movieRouter = require('./routes/movie');
 
 /* middlewares start */
+app.use(cors());
 // 先parse
 app.use(express.json());
 // when post get hit, run movieRouter

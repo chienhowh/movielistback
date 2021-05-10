@@ -3,7 +3,8 @@ const mongoose = require('mongoose'), Schema = mongoose.Schema;
 // construct movie schema
 const MovieSchema = new Schema({
     id: { type: Number, required: [true] },
-    beenWatched: { type: Boolean, required: [true, false] },
+    title: { type: String, required: [true] },
+    beenWatched: { type: Boolean, default: false },
     comment: String
 });
 
