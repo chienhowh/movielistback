@@ -5,7 +5,8 @@ const MovieSchema = new Schema({
     id: { type: Number, required: [true] },
     title: { type: String, required: [true] },
     beenWatched: { type: Boolean, default: false },
-    comment: String
+    comment: String,
+    watchedDate: { type: Date }
 });
 
 // 建立可視屬性，但不存進DB

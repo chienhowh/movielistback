@@ -1,5 +1,4 @@
 const express = require('express');
-const movie = require('../models/movie');
 const Movie = require('../models/movie');
 // 分流
 const router = express.Router();
@@ -40,7 +39,9 @@ router.patch('/:id', async (req, res) => {
     try {
         const patchMovie = await Movie.updateOne({ id: req.params.id }, {
             $set: {
-                beenWatched: req.body.beenWatched
+                beenWatched: req.body.beenWatched,
+                comment:req.body.comment,
+                watchedDate:req.body.watchedDate
             }
         })
         res.json(patchMovie);
