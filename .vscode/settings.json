@@ -2,5 +2,7 @@
     "appService.zipIgnorePattern": [
         "node_modules{,/**}",
         ".vscode{,/**}"
-    ]
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/59505c1d-1049-4ef7-9a82-e55ce873cfea/resourceGroups/movie/providers/Microsoft.Web/sites/movielistdb",
+    "appService.deploySubpath": "."
 }

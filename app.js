@@ -8,6 +8,7 @@ require('dotenv/config');
 // router start 
 const movieRouter = require('./routes/movie');
 
+
 /* middlewares start */
 app.use(cors());
 // 先parse
