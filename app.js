@@ -31,6 +31,6 @@ const db = mongoose.connection;
 // 沒連上回傳錯誤
 db.on('error',console.error.bind(console),'mongoDB error');
 
-app.listen(port, () => {
+app.listen(process.env.port || port, () => {
     console.log('work')
 })
