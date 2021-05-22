@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const cors = require('cors')
-const port = 80;
+const port = 443;
 require('dotenv/config');
 
 // router start 
