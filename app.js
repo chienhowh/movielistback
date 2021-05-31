@@ -3,10 +3,18 @@ const mongoose = require('mongoose');
 const app = express();
 const cors = require('cors')
 const port = 80;
+const fs = require('fs')
 require('dotenv/config');
 // router start 
 const movieRouter = require('./routes/movie');
-
+// SSL
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/movieback.duckdns.org/privkey.pem','utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/movieback.duckdns.org/fullchain.pem','utf8');
+const credentials = {
+    key: privateKey,
+    cert: certificate,
+    ca: certificate
+};
 
 /* middlewares start */
 app.use(cors());
