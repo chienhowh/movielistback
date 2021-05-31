@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const http = require('http');
 const app = express();
 const cors = require('cors')
 const port = 80;
@@ -10,6 +11,9 @@ const movieRouter = require('./routes/movie');
 
 
 /* middlewares start */
+app.get('/.well-known/acme-challenge/x0mUpwJh5FtpGeCEES7U43UILEbLKOKjhUISSw-9pBA',(req,res)=>{
+    res.send('x0mUpwJh5FtpGeCEES7U43UILEbLKOKjhUISSw-9pBA.IsvVulhqVT4gaQTFIQKqo1zwstDzN1YbdwQ69BzJBGU')
+})
 app.use(cors());
 // 先parse
 app.use(express.json());
@@ -31,6 +35,7 @@ const db = mongoose.connection;
 // 沒連上回傳錯誤
 db.on('error',console.error.bind(console),'mongoDB error');
 
-app.listen( port, () => {
-    console.log('work')
-})
+// app.listen( port, () => {
+//     console.log('work')
+// })
+http.createServer(app).listen(port);
