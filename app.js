@@ -11,9 +11,6 @@ const movieRouter = require('./routes/movie');
 
 
 /* middlewares start */
-app.get('/.well-known/acme-challenge/x0mUpwJh5FtpGeCEES7U43UILEbLKOKjhUISSw-9pBA',(req,res)=>{
-    res.send('x0mUpwJh5FtpGeCEES7U43UILEbLKOKjhUISSw-9pBA.IsvVulhqVT4gaQTFIQKqo1zwstDzN1YbdwQ69BzJBGU')
-})
 app.use(cors());
 // 先parse
 app.use(express.json());
@@ -26,6 +23,9 @@ app.get('/', (req, res) => {
     res.send('hello world')
 })
 
+app.get('/.well-known/acme-challenge/x0mUpwJh5FtpGeCEES7U43UILEbLKOKjhUISSw-9pBA',(req,res)=>{
+    res.send('x0mUpwJh5FtpGeCEES7U43UILEbLKOKjhUISSw-9pBA.IsvVulhqVT4gaQTFIQKqo1zwstDzN1YbdwQ69BzJBGU')
+})
 
 mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
     console.log('connect to mongoDB');
