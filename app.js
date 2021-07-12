@@ -45,9 +45,9 @@ db.on('error', console.error.bind(console), 'mongoDB error');
 // app.listen(port, () => {
 //     console.log('work')
 // })
-// http.createServer(app).listen(80,()=>{
-//     console.log('http work');
-// });
+http.createServer(app).listen(80,()=>{
+    console.log('http work');
+});
 https.createServer(credentials,app).listen(443,()=>{
     console.log('https work');
 })
